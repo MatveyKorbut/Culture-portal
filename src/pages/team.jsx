@@ -1,44 +1,45 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout/Layout';
-
 import Person from '../components/Team/Person/Person';
 
-const team = [
-  {
-    name: 'Vasya',
-    link: 'profile',
-    avatar: '',
-  },
-  {
-    name: 'Petya',
-    link: 'profile',
-    avatar: '',
-  },
-  {
-    name: 'Masha',
-    link: 'profile',
-    avatar: '',
-  },
-  {
-    name: 'Kostya',
-    link: 'profile',
-    avatar: '',
-  },
-  {
-    name: 'Kolya',
-    link: 'profile',
-    avatar: '',
-  },
-];
+import classes from './team.module.css';
 
-const Team = () => (
-  <Layout>
-    <h1>НАША КОМАНДА</h1>
-    <div>
-      {team.map(person => <Person {...person} />)}
-    </div>
-  </Layout>
-);
+class Team extends PureComponent {
+  render() {
+    const { data: { allContentfulDeveloper: { edges } } } = this.props;
+    const team = edges.map(({ node }) => (
+      <Person {...node} />
+    ));
+    return (
+      <Layout>
+        <h1>НАША КОМАНДА</h1>
+        <div className={classes.teamContainer}>
+          {team}
+        </div>
+      </Layout>
+    );
+  }
+}
+
+export const teamQuery = graphql`
+{
+  allContentfulDeveloper {
+    edges {
+      node {
+        name
+        avatar  {
+          fluid {
+            src
+          }
+        }
+        link
+        email
+      }
+    }
+  }
+}
+`;
 
 export default Team;
