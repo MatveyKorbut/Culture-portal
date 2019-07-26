@@ -9,9 +9,7 @@ import classes from './team.module.css';
 class Team extends PureComponent {
   render() {
     const { data: { allContentfulDeveloper: { edges } } } = this.props;
-    const team = edges.map(({ node }) => (
-      <Person {...node} />
-    ));
+    const team = edges.map(({ node }) => <Person key={node.link} {...node} />);
     return (
       <Layout>
         <h1>НАША КОМАНДА</h1>
