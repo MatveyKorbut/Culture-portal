@@ -1,0 +1,11 @@
+.main {
+  background-color: teal;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+}

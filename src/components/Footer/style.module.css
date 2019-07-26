@@ -1,0 +1,9 @@
+.main {
+  background-color: thistle;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: rgb(24, 21, 190);
+  text-align: center;
+}
