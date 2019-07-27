@@ -7,7 +7,7 @@ exports.createPages = ({ actions, graphql }) => {
   const arcPage = path.resolve('src/components/ArchitectPage/architectPage.jsx');
 
   return graphql(`{
-    allContentfulArchitect {
+    allContentfulArchitect(filter: {node_locale: {in: "en-US"}}) {
       edges {
         node {
           name
