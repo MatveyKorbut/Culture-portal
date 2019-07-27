@@ -55,7 +55,7 @@ export default Search;
 
 export const arcQuery = graphql`
 {
-  allContentfulArchitect {
+  allContentfulArchitect(filter: {node_locale: {in: "en-US"}}) {
     edges {
       node {
         name
