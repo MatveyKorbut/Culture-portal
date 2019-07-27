@@ -1,4 +1,5 @@
 import React from 'react';
+import shortid from 'shortid';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -23,7 +24,7 @@ const timeline = ({ timelineData }) => {
       <Timeline lineColor="#ddd">
         {data.map(event => (
           <TimelineItem
-            key={event.text.length}
+            key={shortid.generate()}
             dateText={event.date}
             dateInnerStyle={{ background: '#3f51b5' }}
             style={{ color: '#3f51b5' }}
