@@ -23,14 +23,16 @@ class Architect extends Component {
   }
 
   render() {
-    const { name } = this.data;
+    const {
+      name,
+      img,
+      vita,
+      date,
+    } = this.data;
     return (
       <Layout>
         <div className={style.Container}>
-          <h2>
-            {name}
-          </h2>
-          <Person />
+          <Person name={name} img={img} vita={vita} date={date} />
           <Timeline />
           <Activity />
           <Video />
