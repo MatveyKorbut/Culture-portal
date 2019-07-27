@@ -28,12 +28,13 @@ class Architect extends Component {
       img,
       vita,
       date,
+      timelineData,
     } = this.data;
     return (
       <Layout>
         <div className={style.Container}>
           <Person name={name} img={img} vita={vita} date={date} />
-          <Timeline />
+          <Timeline timelineData={timelineData} />
           <Activity />
           <Video />
           <Map />
