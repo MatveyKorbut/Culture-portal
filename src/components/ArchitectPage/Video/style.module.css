@@ -2,6 +2,47 @@
   height: 300px;
   width: 600px;
   margin: 30px;
-  border: 1px solid cornflowerblue;
-  background-color: rgb(226, 43, 52);
+  text-align: center;
+}
+
+.modal {
+  position: absolute;
+  width: 70vw;
+  height: 70vh;
+  top: 15vh;
+  left: 15vw;
+  outline: none;
+  line-height: 0;
+}
+
+.iframe {
+  margin: 0;
+  width: 100%!important;
+  height: 100%!important;
+}
+
+.close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 50px;
+  color: #fff;
+}
+
+@media screen and (max-width: 750px) {
+  .modal {
+    width: 90vw;
+    height: 40vh;
+    top: 25vh;
+    left: 4vw;
+  }
+}
+
+@media screen and (max-width: 750px) and (orientation: landscape) {
+  .modal {
+    width: 90vw;
+    height: 80vh;
+    top: 30px;
+    left: 4vw;
+  }
 }

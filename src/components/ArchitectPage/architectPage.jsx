@@ -10,7 +10,7 @@ import Timeline from './Timeline/Timeline';
 import Video from './Video/Video';
 
 import style from './style.module.css';
-// в пропсах приходят все данные, их структуру скинул в телегу
+
 class Architect extends Component {
   constructor(props) {
     super(props);
@@ -29,6 +29,7 @@ class Architect extends Component {
       vita,
       date,
       timelineData,
+      videoId,
     } = this.data;
     return (
       <Layout>
@@ -36,7 +37,7 @@ class Architect extends Component {
           <Person name={name} img={img} vita={vita} date={date} />
           <Timeline timelineData={timelineData} />
           <Activity />
-          <Video />
+          <Video videoId={videoId} />
           <Map />
           <Gallery />
         </div>
