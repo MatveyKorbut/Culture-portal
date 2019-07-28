@@ -1,0 +1,25 @@
+.box_centrified {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search_container {
+  display: flex;
+  max-width: max-content;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search_container__search_input {
+  width: 85%;
+  height: 2rem;
+  padding-left: 10px;
+  outline: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.search_container__search_input:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+}

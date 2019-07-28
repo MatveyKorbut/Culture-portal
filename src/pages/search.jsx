@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { Link, graphql } from 'gatsby';
-
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import PersonIcon from '@material-ui/icons/Person';
+import classes from './search.module.css';
 import Layout from '../components/Layout/Layout';
 
 class Search extends Component {
@@ -20,32 +25,46 @@ class Search extends Component {
     const { data: { allContentfulArchitect: { edges } } } = this.props;
     const { searchKey } = this.state;
     const links = edges.map(({ node }) => (
-      <li key={node.id}>
-        <Link to={node.path}>
-          {node.name}
-        </Link>
-      </li>
+      <Link to={node.path} key={node.id} style={{ textDecoration: 'none', color: 'inherit' }}>
+        <ListItem button>
+          <ListItemIcon>
+            <PersonIcon />
+          </ListItemIcon>
+          <ListItemText primary={node.name} />
+        </ListItem>
+      </Link>
     ));
     const filteredLinks = edges.filter(({ node }) => node.name.includes(searchKey))
       .map(({ node }) => (
-        <li key={node.id}>
-          <Link to={node.path}>
-            {node.name}
-          </Link>
-        </li>
+        <Link to={node.path} key={node.id}>
+          <ListItem button>
+            <ListItemIcon>
+              <PersonIcon />
+            </ListItemIcon>
+            <ListItemText primary={node.name} />
+          </ListItem>
+        </Link>
       ));
     return (
       <Layout>
-        <h1>LIST OF ARCHITECTS</h1>
-        <input
-          type="search"
-          onInput={this.handleInput}
-          ref={(node) => { this.searchInput = node; }}
-        />
-        <ul>
-          {searchKey ? filteredLinks : links}
-        </ul>
-        <Link to="/">Go back to the homepage</Link>
+        <section className={classes.box_centrified}>
+          <div className={classes.search_container}>
+            <h2>LIST OF ARCHITECTS</h2>
+            <input
+              className={classes.search_container__search_input}
+              type="search"
+              placeholder="Search for architects..."
+              onInput={this.handleInput}
+              ref={(node) => { this.searchInput = node; }}
+            />
+            <div className={classes.search_container__list}>
+              <List component="nav">
+                {searchKey ? filteredLinks : links}
+              </List>
+            </div>
+            <Link to="/">Go back to the homepage</Link>
+          </div>
+        </section>
       </Layout>
     );
   }
