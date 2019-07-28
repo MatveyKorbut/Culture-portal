@@ -21,20 +21,28 @@
   height: 100%!important;
 }
 
+.close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 50px;
+  color: #fff;
+}
+
 @media screen and (max-width: 750px) {
   .modal {
-    width: 70vw;
-    height: 50vh;
+    width: 90vw;
+    height: 40vh;
     top: 25vh;
-    left: 15vw;
+    left: 4vw;
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 750px) and (orientation: landscape) {
   .modal {
-    width: 70vw;
-    height: 30vh;
-    top: 38vh;
-    left: 15vw;
+    width: 90vw;
+    height: 80vh;
+    top: 30px;
+    left: 4vw;
   }
 }

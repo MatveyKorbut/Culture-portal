@@ -15,6 +15,7 @@ const video = ({ videoId }) => {
       </Button>
       <Modal open={isOpen} onClose={() => setIsOpen(false)}>
         <div className={style.modal}>
+          <div onClick={() => setIsOpen(false)} className={style.close}>×</div>
           <iframe
             className={style.iframe}
             title="youtube"
