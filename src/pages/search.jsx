@@ -36,7 +36,7 @@ class Search extends Component {
     ));
     const filteredLinks = edges.filter(({ node }) => node.name.includes(searchKey))
       .map(({ node }) => (
-        <Link to={node.path} key={node.id}>
+        <Link to={node.path} key={node.id} style={{ textDecoration: 'none', color: 'inherit' }}>
           <ListItem button>
             <ListItemIcon>
               <PersonIcon />
