@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   card: {
     maxWidth: 600,
+    width: '98%',
     border: '1px solid #001d2c',
   },
   media: {

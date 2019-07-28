@@ -36,16 +36,18 @@ class Search extends Component {
       ));
     return (
       <Layout>
-        <h1>LIST OF ARCHITECTS</h1>
-        <input
-          type="search"
-          onInput={this.handleInput}
-          ref={(node) => { this.searchInput = node; }}
-        />
-        <ul>
-          {searchKey ? filteredLinks : links}
-        </ul>
-        <Link to="/">Go back to the homepage</Link>
+        <div className="container">
+          <h1>LIST OF ARCHITECTS</h1>
+          <input
+            type="search"
+            onInput={this.handleInput}
+            ref={(node) => { this.searchInput = node; }}
+          />
+          <ul>
+            {searchKey ? filteredLinks : links}
+          </ul>
+          <Link to="/">Go back to the homepage</Link>
+        </div>
       </Layout>
     );
   }

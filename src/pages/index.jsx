@@ -11,10 +11,16 @@ const IndexPage = (props) => {
 
   return (
     <Layout>
-      <h1>HOME PAGE</h1>
-      <p>здесь будет описание сайта</p>
-      <h2>Архитектор дня</h2>
-      <ArchitectOfTheDay architect={architect} />
+      <div className="container intro">
+        <h1>Архитекторы Беларуси</h1>
+      </div>
+      <div className="container border-section">
+        <p>здесь будет описание сайта</p>
+      </div>
+      <div className="container border-section">
+        <h2>Архитектор дня</h2>
+        <ArchitectOfTheDay architect={architect} />
+      </div>
     </Layout>
   );
 };

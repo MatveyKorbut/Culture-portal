@@ -8,6 +8,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
+  min-height: 100vh;
+  min-width: 320px;
+  padding-bottom: 150px;
 }
 article,
 aside,
@@ -605,17 +608,35 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
-main {
+.intro {
+  background: url(../../images/project-intro.jpg) no-repeat;
+  background-size: cover;
+  height: 590px;
+}
+.container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 0 150px;
+  padding: 30px 10px 40px;
+}
+.border-section {
+  border-top: 2px solid #08a3a0;
 }
 @media only screen and (max-width: 1200px) {
   html {
     font-size: 100%;
   }
-  main {
-    padding: 40px 10px 100px;
+}
+@media only screen and (max-width: 800px) {
+  .intro {
+    height: 390px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .intro {
+    height: 200px;
+  }
+  h1 {
+    font-size: 25px;
   }
 }
 

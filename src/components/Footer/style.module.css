@@ -1,9 +1,16 @@
 .main {
-  background-color: thistle;
-  position: fixed;
+  background-color: #001d2c;
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
-  color: rgb(24, 21, 190);
+  color: #fdd104;
   text-align: center;
+  padding: 10px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: right;
+  font-size: 13px;
 }
