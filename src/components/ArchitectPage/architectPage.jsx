@@ -29,14 +29,16 @@ class Architect extends Component {
       vita,
       date,
       timelineData,
+      videoId,
     } = this.data;
+    console.log(videoId);
     return (
       <Layout>
         <div className={style.Container}>
           <Person name={name} img={img} vita={vita} date={date} />
           <Timeline timelineData={timelineData} />
           <Activity />
-          <Video />
+          <Video videoId={videoId} />
           <Map />
           <Gallery />
         </div>

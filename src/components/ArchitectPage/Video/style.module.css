@@ -2,6 +2,20 @@
   height: 300px;
   width: 600px;
   margin: 30px;
-  border: 1px solid cornflowerblue;
-  background-color: rgb(226, 43, 52);
+  text-align: center;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  outline: none;
+  line-height: 0;
+}
+
+.iframe {
+  margin: 0;
+  width: 100%!important;
+  height: auto!important;
 }
