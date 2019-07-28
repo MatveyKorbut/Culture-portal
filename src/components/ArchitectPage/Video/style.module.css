@@ -7,9 +7,10 @@
 
 .modal {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 70vh;
+  top: 15vh;
+  left: 15vw;
   outline: none;
   line-height: 0;
 }
@@ -17,5 +18,23 @@
 .iframe {
   margin: 0;
   width: 100%!important;
-  height: auto!important;
+  height: 100%!important;
+}
+
+@media screen and (max-width: 750px) {
+  .modal {
+    width: 70vw;
+    height: 50vh;
+    top: 25vh;
+    left: 15vw;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .modal {
+    width: 70vw;
+    height: 30vh;
+    top: 38vh;
+    left: 15vw;
+  }
 }

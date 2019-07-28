@@ -7,8 +7,6 @@ import style from './style.module.css';
 
 const video = ({ videoId }) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  console.log(videoId);
-
   return (
     <div className={style.Container}>
       <h2>Youtube</h2>
@@ -28,7 +26,6 @@ const video = ({ videoId }) => {
         </div>
       </Modal>
     </div>
-
   );
 };
 

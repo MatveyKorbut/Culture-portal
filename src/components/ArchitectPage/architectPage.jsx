@@ -10,7 +10,7 @@ import Timeline from './Timeline/Timeline';
 import Video from './Video/Video';
 
 import style from './style.module.css';
-// в пропсах приходят все данные, их структуру скинул в телегу
+
 class Architect extends Component {
   constructor(props) {
     super(props);
@@ -31,7 +31,6 @@ class Architect extends Component {
       timelineData,
       videoId,
     } = this.data;
-    console.log(videoId);
     return (
       <Layout>
         <div className={style.Container}>
