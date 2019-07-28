@@ -1,5 +1,6 @@
 import React from 'react';
 import { navigate } from 'gatsby';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -12,9 +13,17 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   card: {
     maxWidth: 600,
+    border: '1px solid #001d2c',
   },
   media: {
-    height: 300,
+    height: 400,
+  },
+  btnBox: {
+    justifyContent: 'flex-end',
+    background: '#006668',
+  },
+  btn: {
+    color: '#fdd104',
   },
 });
 
@@ -38,8 +47,8 @@ const ArchitectOfTheDay = ({ architect }) => {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button onClick={() => navigate(architect.path)} size="small" color="primary">
+      <CardActions className={classes.btnBox}>
+        <Button onClick={() => navigate(architect.path)} size="small" color="primary" className={classes.btn}>
           Learn More
         </Button>
       </CardActions>
