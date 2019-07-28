@@ -62,8 +62,8 @@ class Search extends Component {
                 {searchKey ? filteredLinks : links}
               </List>
             </div>
-            <Link to="/">Go back to the homepage</Link>
           </div>
+          <Link to="/" className={classes.buttonStyled_link}>Go back to the homepage</Link>
         </section>
       </Layout>
     );
