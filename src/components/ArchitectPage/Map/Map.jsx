@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import React, { Component } from 'react';
 import idGenerator from 'react-id-generator';
 import './leaflet.css';
