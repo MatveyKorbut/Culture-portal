@@ -29,6 +29,7 @@ class Architect extends Component {
       vita,
       date,
       timelineData,
+      work,
     } = this.data;
     return (
       <Layout>
@@ -37,7 +38,7 @@ class Architect extends Component {
           <Timeline timelineData={timelineData} />
           <Activity />
           <Video />
-          <Map />
+          <Map work={work}/>
           <Gallery />
         </div>
       </Layout>
