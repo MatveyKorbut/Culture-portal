@@ -1,6 +1,4 @@
 .Container {
-  height: 300px;
-  width: 600px;
   margin: 30px;
   text-align: center;
 }
@@ -27,6 +25,12 @@
   right: -20px;
   font-size: 50px;
   color: #fff;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #fdd104;
 }
 
 @media screen and (max-width: 750px) {

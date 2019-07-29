@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
@@ -15,7 +16,9 @@ const Image = () => {
   }
   `);
 
-  return <Img fixed={data.file.childImageSharp.fixed} />;
+  return (
+    <Link to='/' className='logo'><Img fixed={data.file.childImageSharp.fixed} /></Link>
+  );
 };
 
 export default Image;

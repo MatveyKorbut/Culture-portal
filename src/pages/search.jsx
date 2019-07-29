@@ -27,9 +27,9 @@ class Search extends Component {
     const links = edges.map(({ node }) => (
       <Link to={node.path} key={node.id} style={{ textDecoration: 'none', color: 'inherit' }}>
         <ListItem button>
-          <ListItemIcon>
-            <PersonIcon />
-          </ListItemIcon>
+          <div style={{ width: 45, height: 45, marginRight: 15, overflow: 'hidden' }}>
+            <img src={node.img.file.url} alt={node.name} />
+          </div>
           <ListItemText primary={node.name} />
         </ListItem>
       </Link>
@@ -80,6 +80,11 @@ export const arcQuery = graphql`
         name
         path
         id
+        img {
+          file {
+            url
+          }
+        }
       }
     }
   }

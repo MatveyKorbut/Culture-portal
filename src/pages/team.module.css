@@ -1,5 +1,24 @@
 .teamContainer {
 	display: flex;
 	justify-content: space-around;
-	padding: 20px;
+	padding: 20px 0;
+}
+
+.teamContainer > div {
+  width: 180px;
+  cursor: default;
+}
+
+@media only screen and (min-width: 901px) {
+  .teamContainer > div {
+    flex: 1;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .teamContainer {
+    flex-wrap: wrap;
+  }
+
+
 }
