@@ -17,9 +17,11 @@ const Layout = ({ children }) => {
     }
   `);
 
+  const [open, setOpen] = React.useState(false);
+
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.title} setOpen={setOpen} open={open} />
       <main>{children}</main>
       <Footer />
     </>

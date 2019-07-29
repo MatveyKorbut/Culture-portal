@@ -7,11 +7,13 @@ import Navigation from '../Navigation/Navigation';
 
 const Header = ({ siteTitle }) => (
   <header className={style.main}>
-    <div className={style.heading}>
-      <Logo />
-      <h1>{siteTitle}</h1>
+    <div className={style.container}>
+      <div className={style.heading}>
+        <Logo />
+        <h1>{siteTitle}</h1>
+      </div>
+      <Navigation />
     </div>
-    <Navigation />
   </header>
 );
 
