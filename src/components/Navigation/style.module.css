@@ -1,5 +1,34 @@
 .main {
-  background-color: turquoise;
+  background-color: #08a3a0;
+  border-top: 1px solid #12c4c1;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #014849;
+  text-transform: uppercase;
+  padding: 0 0 0 70px;
+}
+header [class="active"],
+.nav a:hover,
+.nav a:focus,
+.nav a:active {
+  color: #ffffff;
+}
+
+[aria-current="page"] > div {
+  background: #cdf0f1;
+}
+
+@media only screen and (max-width: 959px) {
+  .nav a {
+    display: none;
+  }
 }
