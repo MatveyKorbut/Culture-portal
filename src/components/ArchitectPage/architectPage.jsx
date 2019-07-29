@@ -30,6 +30,7 @@ class Architect extends Component {
       date,
       timelineData,
       videoId,
+      work,
     } = this.data;
     return (
       <Layout>
@@ -38,7 +39,7 @@ class Architect extends Component {
           <Timeline timelineData={timelineData} />
           <Activity />
           <Video videoId={videoId} />
-          <Map />
+          <Map work={work}/>
           <Gallery />
         </div>
       </Layout>
