@@ -4,13 +4,22 @@ import './leaflet.css';
 
 import style from './style.module.css';
 
-class SimpleMap extends Component {
-  render() {
-    const LeafletMap = require('react-leaflet').Map;
-    const TileLayer = require('react-leaflet').TileLayer;
-    const Marker = require('react-leaflet').Marker;
-    const Popup = require('react-leaflet').Popup;
+let LeafletMap;
+let TileLayer;
+let Marker;
+let Popup;
 
+
+class SimpleMap extends Component {
+  componentDidMount() {
+    LeafletMap = require('react-leaflet').Map;
+    TileLayer = require('react-leaflet').TileLayer;
+    Marker = require('react-leaflet').Marker;
+    Popup = require('react-leaflet').Popup;
+    this.forceUpdate();
+  }
+
+  render() {
     const data = Object.values(JSON.parse(this.props.work.internal.content));
 
     if (LeafletMap && TileLayer && Marker && Popup) {
