@@ -24,3 +24,9 @@
     padding-left: 56px;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .heading h1 {
+    font-size: 15px;
+  }
+}

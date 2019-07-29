@@ -14,20 +14,24 @@ import github from '../../../images/github.png';
 
 const useStyles = makeStyles({
   card: {
-    minWidth: 220,
     textAlign: 'center',
+    margin: '0 5px 10px',
   },
   links: {
-    minWidth: 220,
     justifyContent: 'center',
   },
   media: {
     height: 200,
+    cursor: 'default',
   },
   button: {
     margin: 0,
     width: 52,
     height: 52,
+  },
+  title: {
+    height: '75px',
+    cursor: 'default',
   },
 });
 
@@ -47,7 +51,7 @@ const person = ({
           image={avatar.fluid.src}
           title={name}
         />
-        <CardContent>
+        <CardContent className={classes.title}>
           <Typography gutterBottom variant="h6" component="h3">
             {name}
           </Typography>

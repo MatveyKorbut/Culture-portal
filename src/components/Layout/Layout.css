@@ -8,6 +8,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
+  min-height: 100vh;
+  padding-bottom: 45px;
+  min-width: 320px;
 }
 article,
 aside,
@@ -621,5 +624,16 @@ main {
   main {
     padding: 40px 10px 100px;
   }
+}
+@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 15px;
+  }
+}
+[aria-current="page"] > div {
+  background: transparent;
 }
 

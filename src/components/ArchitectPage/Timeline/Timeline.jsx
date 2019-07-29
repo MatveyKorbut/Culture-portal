@@ -6,13 +6,19 @@ import Typography from '@material-ui/core/Typography';
 
 import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
   root: {
     padding: '10px',
     margin: '10px',
-    width: '1000px',
+    maxWidth: '1000px',
     textAlign: 'center',
   },
+  text: {
+    fontSize: '20px',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '15px',
+    },
+  }
 }));
 
 const timeline = ({ timelineData }) => {
@@ -29,7 +35,7 @@ const timeline = ({ timelineData }) => {
             dateInnerStyle={{ background: '#3f51b5' }}
             style={{ color: '#3f51b5' }}
           >
-            <p style={{ fontSize: '20px' }}>{event.text}</p>
+            <p className={classes.text}>{event.text}</p>
           </TimelineItem>
         ))}
       </Timeline>

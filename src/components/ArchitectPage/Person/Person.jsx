@@ -4,17 +4,30 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
   root: {
     padding: '10px',
     margin: '10px',
-    width: '1000px',
+    maxWidth: '1000px',
   },
   image: {
-    minWidth: '360px',
+    [theme.breakpoints.up('sm')]: {
+      width: '25%',
+    },
+    padding: '0 30px 0 0',
   },
   bio: {
-    minWidth: '540px',
+    [theme.breakpoints.up('sm')]: {
+      width: '75%',
+    },
+  },
+  rootItem: {
+    [theme.breakpoints.up('sm')]: {
+      alignItems: 'flex-start',
+    },
+    [theme.breakpoints.down('sm')]: {
+      flexFlow: 'column',
+    },
   },
 }));
 
@@ -32,12 +45,13 @@ const person = ({
         alignItems="center"
         direction="row"
         wrap="nowrap"
+        className={classes.rootItem}
       >
         <Grid item className={classes.image}>
           <img alt={name} width="320" src={img.file.url} />
         </Grid>
         <Grid item className={classes.bio}>
-          <Typography variant="h4" component="h1">
+          <Typography variant="h4" component="h2">
             {name}
           </Typography>
           <Typography variant="h6" component="h3">

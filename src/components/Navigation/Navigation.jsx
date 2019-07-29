@@ -117,7 +117,7 @@ const Nav = () => {
         <List>
           {menuItems.map((item) => {
             return (
-              <Link to={item.link} className={clsx(classes.responsiveLink)} activeClassName="active">
+              <Link to={item.link} className={clsx(classes.responsiveLink)} activeClassName="active" key={item.text}>
                 <ListItem button key={item.text}>
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText primary={item.text} />
@@ -132,7 +132,7 @@ const Nav = () => {
       <nav className={style.nav}>
         {menuItems.map((item) => {
           return (
-            <Link to={item.link} activeClassName="active">{item.text}</Link>
+            <Link to={item.link} activeClassName="active" key={item.text}>{item.text}</Link>
           );
         })
         }
