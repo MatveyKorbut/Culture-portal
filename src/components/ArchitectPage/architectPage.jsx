@@ -29,6 +29,7 @@ class Architect extends Component {
       vita,
       date,
       timelineData,
+      videoId,
       work,
     } = this.data;
     return (
