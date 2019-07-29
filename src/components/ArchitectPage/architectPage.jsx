@@ -37,7 +37,7 @@ class Architect extends Component {
         <div className={style.Container}>
           <Person name={name} img={img} vita={vita} date={date} />
           <Timeline timelineData={timelineData} />
-          <Activity />
+          <Activity work={work} />
           <Video videoId={videoId} />
           <Map work={work}/>
           <Gallery />
