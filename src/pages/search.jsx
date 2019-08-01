@@ -27,7 +27,10 @@ class Search extends Component {
     const links = edges.map(({ node }) => (
       <Link to={node.path} key={node.id} style={{ textDecoration: 'none', color: 'inherit' }}>
         <ListItem button>
-          <div style={{ width: 45, height: 45, marginRight: 15, overflow: 'hidden' }}>
+          <div style={{
+            width: 45, height: 45, marginRight: 15, overflow: 'hidden',
+          }}
+          >
             <img src={node.img.file.url} alt={node.name} />
           </div>
           <ListItemText primary={node.name} />
@@ -74,7 +77,7 @@ export default Search;
 
 export const arcQuery = graphql`
 {
-  allContentfulArchitect(filter: {node_locale: {in: "en-US"}}) {
+  allContentfulArchitect {
     edges {
       node {
         name
