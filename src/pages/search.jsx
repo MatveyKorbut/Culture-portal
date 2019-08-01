@@ -38,6 +38,7 @@ class Search extends Component {
     const links = edges.map(link);
     const filteredLinks = edges.filter(({ node }) => node.name.includes(searchKey))
       .map(link);
+    const isEmpty = filteredLinks.length === 0 && searchKey;
     return (
       <Layout>
         <section className={classes.box_centrified}>
@@ -53,6 +54,7 @@ class Search extends Component {
             <div className={classes.search_container__list}>
               <List component="nav">
                 {searchKey ? filteredLinks : links}
+                {isEmpty ? 'Архитекторы не найдены' : ''}
               </List>
             </div>
           </div>
