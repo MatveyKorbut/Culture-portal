@@ -36,7 +36,9 @@ class Search extends Component {
       </Link>
     );
     const links = edges.map(link);
-    const filteredLinks = edges.filter(({ node }) => node.name.includes(searchKey))
+    const filteredLinks = edges
+      .filter(({ node }) => node.name.toLowerCase()
+        .includes(searchKey ? searchKey.toLowerCase() : searchKey))
       .map(link);
     const isEmpty = filteredLinks.length === 0 && searchKey;
     return (
