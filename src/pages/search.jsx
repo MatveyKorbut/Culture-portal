@@ -3,8 +3,6 @@ import { Link, graphql } from 'gatsby';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import PersonIcon from '@material-ui/icons/Person';
 import classes from './search.module.css';
 import Layout from '../components/Layout/Layout';
 
@@ -24,7 +22,7 @@ class Search extends Component {
   render() {
     const { data: { allContentfulArchitect: { edges } } } = this.props;
     const { searchKey } = this.state;
-    const links = edges.map(({ node }) => (
+    const link = ({ node }) => (
       <Link to={node.path} key={node.id} style={{ textDecoration: 'none', color: 'inherit' }}>
         <ListItem button>
           <div style={{
@@ -36,18 +34,10 @@ class Search extends Component {
           <ListItemText primary={node.name} />
         </ListItem>
       </Link>
-    ));
+    );
+    const links = edges.map(link);
     const filteredLinks = edges.filter(({ node }) => node.name.includes(searchKey))
-      .map(({ node }) => (
-        <Link to={node.path} key={node.id} style={{ textDecoration: 'none', color: 'inherit' }}>
-          <ListItem button>
-            <ListItemIcon>
-              <PersonIcon />
-            </ListItemIcon>
-            <ListItemText primary={node.name} />
-          </ListItem>
-        </Link>
-      ));
+      .map(link);
     return (
       <Layout>
         <section className={classes.box_centrified}>
