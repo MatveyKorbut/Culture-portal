@@ -58,7 +58,7 @@ const person = ({
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.links}>
-        <IconButton href={`https://github.com/${link}`} className={classes.button}>
+        <IconButton href={`https://github.com/${link}`} target="__blank" className={classes.button}>
           <img alt="github" width="40" src={github} className={classes.avatar} />
         </IconButton>
         <IconButton href={`mailto:${email}`} className={classes.button} color="primary">

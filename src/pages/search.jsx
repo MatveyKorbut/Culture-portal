@@ -3,8 +3,6 @@ import { Link, graphql } from 'gatsby';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import PersonIcon from '@material-ui/icons/Person';
 import classes from './search.module.css';
 import Layout from '../components/Layout/Layout';
 
@@ -24,27 +22,25 @@ class Search extends Component {
   render() {
     const { data: { allContentfulArchitect: { edges } } } = this.props;
     const { searchKey } = this.state;
-    const links = edges.map(({ node }) => (
+    const link = ({ node }) => (
       <Link to={node.path} key={node.id} style={{ textDecoration: 'none', color: 'inherit' }}>
         <ListItem button>
-          <div style={{ width: 45, height: 45, marginRight: 15, overflow: 'hidden' }}>
+          <div style={{
+            width: 45, height: 45, marginRight: 15, overflow: 'hidden',
+          }}
+          >
             <img src={node.img.file.url} alt={node.name} />
           </div>
           <ListItemText primary={node.name} />
         </ListItem>
       </Link>
-    ));
-    const filteredLinks = edges.filter(({ node }) => node.name.includes(searchKey))
-      .map(({ node }) => (
-        <Link to={node.path} key={node.id} style={{ textDecoration: 'none', color: 'inherit' }}>
-          <ListItem button>
-            <ListItemIcon>
-              <PersonIcon />
-            </ListItemIcon>
-            <ListItemText primary={node.name} />
-          </ListItem>
-        </Link>
-      ));
+    );
+    const links = edges.map(link);
+    const filteredLinks = edges
+      .filter(({ node }) => node.name.toLowerCase()
+        .includes(searchKey ? searchKey.toLowerCase() : searchKey))
+      .map(link);
+    const isEmpty = filteredLinks.length === 0 && searchKey;
     return (
       <Layout>
         <section className={classes.box_centrified}>
@@ -60,6 +56,7 @@ class Search extends Component {
             <div className={classes.search_container__list}>
               <List component="nav">
                 {searchKey ? filteredLinks : links}
+                {isEmpty ? 'Архитекторы не найдены' : ''}
               </List>
             </div>
           </div>
@@ -74,7 +71,7 @@ export default Search;
 
 export const arcQuery = graphql`
 {
-  allContentfulArchitect(filter: {node_locale: {in: "en-US"}}) {
+  allContentfulArchitect {
     edges {
       node {
         name
