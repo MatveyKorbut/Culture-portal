@@ -10,13 +10,23 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   card: {
-    maxWidth: 600,
-    border: '1px solid #001d2c',
+    maxWidth: 900,
+    boxShadow: '0 0 0 2px #ccc',
+    margin: '0 auto',
+  },
+  main: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    padding: '20px',
+    [theme.breakpoints.down('xs')]: {
+      flexFlow: 'column',
+    },
   },
   media: {
-    height: 400,
+    height: 300,
+    minWidth: 200,
   },
   btnBox: {
     justifyContent: 'flex-end',
@@ -25,34 +35,43 @@ const useStyles = makeStyles({
   btn: {
     color: '#fdd104',
   },
-});
+}));
 
 const ArchitectOfTheDay = ({ architect }) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.card}>
-      <CardActionArea onClick={() => navigate(architect.path)}>
-        <CardMedia
-          className={classes.media}
-          image={architect.img.file.url}
-          title="Architect of the Day"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {architect.name}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {architect.vita}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions className={classes.btnBox}>
-        <Button onClick={() => navigate(architect.path)} size="small" color="primary" className={classes.btn}>
-          Learn More
-        </Button>
-      </CardActions>
-    </Card>
+    <>
+      <h2 style={{
+        textAlign: 'center',
+        margin: 5,
+      }}
+      >
+        Архитектор дня
+      </h2>
+      <Card className={classes.card}>
+        <CardActionArea onClick={() => navigate(architect.path)} className={classes.main}>
+          <CardMedia
+            className={classes.media}
+            image={architect.img.file.url}
+            title="Architect of the Day"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {architect.name}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {architect.vita}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions className={classes.btnBox}>
+          <Button onClick={() => navigate(architect.path)} size="small" color="primary" className={classes.btn}>
+            Learn More
+          </Button>
+        </CardActions>
+      </Card>
+    </>
   );
 };
 
