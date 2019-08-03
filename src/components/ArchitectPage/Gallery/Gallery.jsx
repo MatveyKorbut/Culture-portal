@@ -4,7 +4,7 @@ import AwesomeSlider from 'react-awesome-slider';
 
 import idGenerator from 'react-id-generator';
 
-import AwsSliderStyles from 'react-awesome-slider/src/core/styles.scss';
+import AwsSliderStyles from './styles.scss';
 
 import style from './style.module.css';
 

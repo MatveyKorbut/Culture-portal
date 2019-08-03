@@ -1,7 +1,6 @@
 .Container {
-    height: 400px;
-    width: 100%;
+    height: max-content;
+    width: 70vw;
     margin: 30px;
     border: 1px solid cornflowerblue;
-    background-color: rgb(64, 226, 43);
   }
