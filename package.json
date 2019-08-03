@@ -9,6 +9,7 @@
     "@material-ui/icons": "^4.2.1",
     "add": "^2.0.6",
     "cli": "^1.0.1",
+    "clsx": "^1.0.4",
     "dotenv": "^8.0.0",
     "editorconfig": "^0.15.3",
     "eslint-config-airbnb": "^17.1.1",
