@@ -39,8 +39,8 @@ class Architect extends Component {
           <Timeline timelineData={timelineData} />
           <Activity work={work} />
           <Video videoId={videoId} />
-          <Map work={work}/>
-          <Gallery />
+          <Map work={work} />
+          <Gallery work={work} />
         </div>
       </Layout>
     );
