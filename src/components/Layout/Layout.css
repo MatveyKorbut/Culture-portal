@@ -410,7 +410,6 @@ table {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
   font-size: 1rem;
   line-height: 1.45rem;
   border-collapse: collapse;
@@ -611,7 +610,7 @@ pre tt:after {
 main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 0 150px;
+  padding: 20px 0 20px;
 }
 .container {
   max-width: 1200px;
@@ -622,7 +621,7 @@ main {
     font-size: 100%;
   }
   main {
-    padding: 40px 10px 100px;
+    padding: 20px 10px 20px;
   }
 }
 @media only screen and (max-width: 500px) {
