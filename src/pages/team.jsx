@@ -12,7 +12,12 @@ class Team extends PureComponent {
     const team = edges.map(({ node }) => <Person key={node.link} {...node} />);
     return (
       <Layout>
-        <h1>НАША КОМАНДА</h1>
+        <h1 style={{
+          textAlign: 'center',
+        }}
+        >
+          НАША КОМАНДА
+        </h1>
         <div className={classes.teamContainer}>
           {team}
         </div>
