@@ -108,6 +108,9 @@ const Nav = () => {
         <div
           className={clsx(classes.toolbarIcon, !open && classes.toolbarIconHidden)}
           onClick={() => setOpen(false)}
+          onKeyUp={() => setOpen(false)}
+          role="button"
+          tabIndex="0"
         >
           <IconButton onClick={() => setOpen(false)}>
             <ChevronLeftIcon />
@@ -115,30 +118,25 @@ const Nav = () => {
         </div>
 
         <List>
-          {menuItems.map((item) => {
-            return (
-              <Link to={item.link} className={clsx(classes.responsiveLink)} activeClassName="active" key={item.text}>
-                <ListItem button key={item.text}>
-                  <ListItemIcon>{item.icon}</ListItemIcon>
-                  <ListItemText primary={item.text} />
-                </ListItem>
-              </Link>
-            );
-          })
-          }
+          {menuItems.map(item => (
+            <Link to={item.link} className={clsx(classes.responsiveLink)} activeClassName="active" key={item.text}>
+              <ListItem button key={item.text}>
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.text} />
+              </ListItem>
+            </Link>
+          ))}
         </List>
       </Drawer>
 
       <nav className={style.nav}>
-        {menuItems.map((item) => {
-          return (
-            <Link to={item.link} activeClassName="active" key={item.text}>{item.text}</Link>
-          );
-        })
+        {menuItems.map(item => (
+          <Link to={item.link} activeClassName="active" key={item.text}>{item.text}</Link>
+        ))
         }
       </nav>
     </div>
-  )
+  );
 };
 
 export default Nav;
