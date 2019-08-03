@@ -10,6 +10,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     padding: '10px',
     margin: '10px',
+    width: '100%',
     maxWidth: '1000px',
     textAlign: 'center',
   },
@@ -18,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       fontSize: '15px',
     },
-  }
+  },
 }));
 
 const timeline = ({ timelineData }) => {
