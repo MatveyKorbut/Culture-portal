@@ -4,7 +4,7 @@ import AwesomeSlider from 'react-awesome-slider';
 
 import idGenerator from 'react-id-generator';
 
-import 'react-awesome-slider/dist/styles.css';
+import AwsSliderStyles from 'react-awesome-slider/src/core/styles.scss';
 
 import style from './style.module.css';
 
@@ -12,10 +12,12 @@ import style from './style.module.css';
 const gallery = ({ work }) => {
   const data = Object.values(JSON.parse(work.internal.content));
   const worksImg = data.map(el => (
-    <div key={idGenerator()} data-src={el.img} />
+    <div key={idGenerator()} data-src={el.img}>
+      <p>{el.title}</p>
+    </div>
   ));
   return (
-    <AwesomeSlider className={style.Container}>
+    <AwesomeSlider cssModule={AwsSliderStyles} className={style.Container}>
       {worksImg}
     </AwesomeSlider>
   );
