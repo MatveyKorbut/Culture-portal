@@ -20,7 +20,7 @@ class Search extends Component {
   }
 
   render() {
-    const { data: { allContentfulArchitect: { edges } } } = this.props;
+    const { data: { allContentfulArchitectBy: { edges } } } = this.props;
     const { searchKey } = this.state;
     const link = ({ node }) => (
       <Link to={node.path} key={node.id} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -45,22 +45,22 @@ class Search extends Component {
       <Layout>
         <section className={classes.box_centrified}>
           <div className={classes.search_container}>
-            <h2>СПИСОК АРХИТЕКТОРОВ</h2>
+            <h2>СПИС АРХИТЭКТАРАУ</h2>
             <input
               className={classes.search_container__search_input}
               type="search"
-              placeholder="Искать архитекторов..."
+              placeholder="Шукаць архитэктарау..."
               onInput={this.handleInput}
               ref={(node) => { this.searchInput = node; }}
             />
             <div className={classes.search_container__list}>
               <List component="nav">
                 {searchKey ? filteredLinks : links}
-                {isEmpty ? 'Архитекторы не найдены' : ''}
+                {isEmpty ? 'Архитэктары не найдзены' : ''}
               </List>
             </div>
           </div>
-          <Link to="/" className={classes.buttonStyled_link}>Вернуться на главную</Link>
+          <Link to="/by" className={classes.buttonStyled_link}>Вярнуцца да галоунай</Link>
         </section>
       </Layout>
     );
@@ -71,7 +71,7 @@ export default Search;
 
 export const arcQuery = graphql`
 {
-  allContentfulArchitect {
+  allContentfulArchitectBy {
     edges {
       node {
         name

@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import ArchitectOfTheDay from '../components/Home/ArchitectOfTheDay/ArchitectOfTheDay';
 import Layout from '../components/Layout/Layout';
+import '../locales/i18n';
 
 const IndexPage = (props) => {
   const { data: { allContentfulArchitect: { edges } } } = props;
@@ -11,7 +12,7 @@ const IndexPage = (props) => {
 
   return (
     <Layout>
-      <h1>HOME PAGE</h1>
+      <h2>АРХИТЕКТУРА БЕЛАРУСИ</h2>
       <p>
         Длительный период отсутствия собственной государственности и сохранение консервативных,
         феодальных по форме политических установок существенно замедлили развитие

@@ -1,5 +1,6 @@
 import React from 'react';
 import shortid from 'shortid';
+import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -23,11 +24,12 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const timeline = ({ timelineData }) => {
+  const { t } = useTranslation();
   const data = Object.values(JSON.parse(timelineData.internal.content));
   const classes = useStyles();
   return (
     <Paper className={classes.root}>
-      <Typography variant="h4" component="h3">Хронология</Typography>
+      <Typography variant="h4" component="h3">{t('chronology')}</Typography>
       <Timeline lineColor="#ddd">
         {data.map(event => (
           <TimelineItem

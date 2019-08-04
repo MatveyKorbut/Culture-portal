@@ -1,5 +1,6 @@
 import React from 'react';
 import { navigate } from 'gatsby';
+import { useTranslation } from 'react-i18next';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -39,16 +40,9 @@ const useStyles = makeStyles(theme => ({
 
 const ArchitectOfTheDay = ({ architect }) => {
   const classes = useStyles();
-
+  const { t } = useTranslation();
   return (
     <>
-      <h2 style={{
-        textAlign: 'center',
-        margin: 5,
-      }}
-      >
-        Архитектор дня
-      </h2>
       <Card className={classes.card}>
         <CardActionArea onClick={() => navigate(architect.path)} className={classes.main}>
           <CardMedia
@@ -67,7 +61,7 @@ const ArchitectOfTheDay = ({ architect }) => {
         </CardActionArea>
         <CardActions className={classes.btnBox}>
           <Button onClick={() => navigate(architect.path)} size="small" color="primary" className={classes.btn}>
-            Learn More
+            {t('learn_more')}
           </Button>
         </CardActions>
       </Card>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
@@ -7,11 +8,12 @@ import style from './style.module.css';
 
 const video = ({ videoId }) => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const { t } = useTranslation();
   return (
     <div className={style.Container}>
       <h2>Youtube</h2>
       <Button type="button" onClick={() => setIsOpen(true)} color="primary" variant="contained">
-        Watch video
+        {t('watch')}
       </Button>
       <Modal open={isOpen} onClose={() => setIsOpen(false)}>
         <div className={style.modal}>

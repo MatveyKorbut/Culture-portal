@@ -1,0 +1,13 @@
+{
+  "home": "Главная страница",
+  "search": "К списку архитекторов",
+  "team": "Наша команда",
+  "learn_more": "Читать статью",
+  "work": "Работа",
+  "creation_date": "Дата создания",
+  "chronology": "Хронология",
+  "watch": "смотреть видео",
+  "home_link": "/",
+  "search_link": "/search",
+  "team_link": "/team"
+}
