@@ -70,7 +70,7 @@ const person = ({
         </CardActions>
 
         <Typography gutterBottom variant="h6" component="h3">
-          Contribuition:
+          Contribution:
         </Typography>
         <ol style={{
           margin: 0,
