@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import clsx from 'clsx';
 import Drawer from '@material-ui/core/Drawer';
@@ -67,15 +68,15 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const menuItems = [{
-  text: 'Home',
+  text: 'home',
   icon: <Home />,
   link: '/',
 }, {
-  text: 'To the list of architects',
+  text: 'search',
   icon: <Search />,
   link: '/search',
 }, {
-  text: 'Team',
+  text: 'team',
   icon: <People />,
   link: '/team',
 },
@@ -84,7 +85,7 @@ const menuItems = [{
 const Nav = () => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-
+  const { t } = useTranslation();
   return (
     <div className={style.main}>
       <IconButton
@@ -131,7 +132,7 @@ const Nav = () => {
 
       <nav className={style.nav}>
         {menuItems.map(item => (
-          <Link to={item.link} activeClassName="active" key={item.text}>{item.text}</Link>
+          <Link to={item.link} activeClassName="active" key={item.text}>{t(item.text)}</Link>
         ))
         }
       </nav>
