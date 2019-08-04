@@ -40,6 +40,7 @@ const person = ({
   name,
   link,
   email,
+  cont,
 }) => {
   const classes = useStyles();
 
@@ -53,8 +54,8 @@ const person = ({
         />
         <CardContent className={classes.title}>
           <Typography gutterBottom variant="h6" component="h3">
-            {name}
-          </Typography>
+              {name}
+            </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.links}>

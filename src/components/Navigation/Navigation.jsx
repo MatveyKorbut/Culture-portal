@@ -120,7 +120,7 @@ const Nav = () => {
 
         <List>
           {menuItems.map(item => (
-            <Link to={item.link} className={clsx(classes.responsiveLink)} activeClassName="active" key={item.text}>
+            <Link to={t(item.link)} className={clsx(classes.responsiveLink)} activeClassName="active" key={item.text}>
               <ListItem button key={item.text}>
                 <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.text} />
