@@ -1,5 +1,6 @@
 import React from 'react';
 import idGenerator from 'react-id-generator';
+import { useTranslation } from 'react-i18next';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -15,6 +16,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const activity = ({ work }) => {
+  const { t } = useTranslation();
   const data = Object.values(JSON.parse(work.internal.content));
   const works = data.map(building => (
     <tr key={idGenerator()}>
@@ -32,8 +34,8 @@ const activity = ({ work }) => {
       <table>
         <thead>
           <tr>
-            <th>Работа</th>
-            <th>Дата создания</th>
+            <th>{t('work')}</th>
+            <th>{t('creation_date')}</th>
           </tr>
         </thead>
         <tbody>
