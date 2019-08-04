@@ -1,5 +1,8 @@
 {
   "home": "Главная страница",
   "search": "К списку архитекторов",
-  "team": "Наша команда"
+  "team": "Наша команда",
+  "home_link": "/",
+  "search_link": "/search",
+  "team_link": "/team"
 }

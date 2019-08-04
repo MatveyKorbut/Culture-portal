@@ -1,5 +1,8 @@
 {
   "home": "Галоуная старонка",
   "search": "Да спису архитэктарау",
-  "team": "Наша каманда"
+  "team": "Наша каманда",
+  "home_link": "/by",
+  "search_link": "/by/search",
+  "team_link": "/team"
 }
