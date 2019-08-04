@@ -9,6 +9,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 
+import idGenerator from 'react-id-generator';
 import mail from '../../../images/email.png';
 import github from '../../../images/github.png';
 
@@ -43,30 +44,52 @@ const person = ({
   cont,
 }) => {
   const classes = useStyles();
-
+  const data = Object.values(JSON.parse(cont.internal.content));
   return (
-    <Card className={classes.card}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={avatar.fluid.src}
-          title={name}
-        />
-        <CardContent className={classes.title}>
-          <Typography gutterBottom variant="h6" component="h3">
+    <>
+      <Card className={classes.card}>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image={avatar.fluid.src}
+            title={name}
+          />
+          <CardContent className={classes.title}>
+            <Typography gutterBottom variant="h6" component="h3">
               {name}
             </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions className={classes.links}>
-        <IconButton href={`https://github.com/${link}`} target="__blank" className={classes.button}>
-          <img alt="github" width="40" src={github} className={classes.avatar} />
-        </IconButton>
-        <IconButton href={`mailto:${email}`} className={classes.button} color="primary">
-          <img alt="email" width="40" src={mail} className={classes.avatar} />
-        </IconButton>
-      </CardActions>
-    </Card>
+          </CardContent>
+        </CardActionArea>
+        <CardActions className={classes.links}>
+          <IconButton href={`https://github.com/${link}`} target="__blank" className={classes.button}>
+            <img alt="github" width="40" src={github} className={classes.avatar} />
+          </IconButton>
+          <IconButton href={`mailto:${email}`} className={classes.button} color="primary">
+            <img alt="email" width="40" src={mail} className={classes.avatar} />
+          </IconButton>
+        </CardActions>
+
+        <Typography gutterBottom variant="h6" component="h3">
+          Contribution:
+        </Typography>
+        <ol style={{
+          margin: 0,
+        }}
+        >
+          {data.map(item => (
+            <li
+              key={idGenerator()}
+              style={{
+                fontSize: '14px',
+                margin: 0,
+              }}
+            >
+              {item}
+            </li>
+          ))}
+        </ol>
+      </Card>
+    </>
   );
 };
 

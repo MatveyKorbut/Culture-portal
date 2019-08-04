@@ -39,6 +39,11 @@ export const teamQuery = graphql`
         }
         link
         email
+        cont {
+          internal {
+            content
+          }
+        }
       }
     }
   }
