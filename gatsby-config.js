@@ -37,7 +37,14 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
-    }
+    },
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'ru',
+        useLangKeyLayout: false,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

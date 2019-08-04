@@ -7,6 +7,64 @@ exports.createPages = ({ actions, graphql }) => {
   const arcPage = path.resolve('src/components/ArchitectPage/architectPage.jsx');
 
   return graphql(`{
+    allContentfulArchitectBy {
+      edges {
+        node {
+          name
+          date
+          birthPlace
+          authorOfTheDay
+          videoId
+          vita
+          path
+          img {
+            file {
+              url
+            }
+          }
+          id
+          timelineData {
+            internal {
+              content
+            }
+          }
+          work {
+            internal {
+              content
+            }
+          }
+        }
+      }
+    }
+    allContentfulArchitectEn {
+      edges {
+        node {
+          name
+          date
+          birthPlace
+          authorOfTheDay
+          videoId
+          vita
+          path
+          img {
+            file {
+              url
+            }
+          }
+          id
+          timelineData {
+            internal {
+              content
+            }
+          }
+          work {
+            internal {
+              content
+            }
+          }
+        }
+      }
+    }
     allContentfulArchitect {
       edges {
         node {
@@ -42,7 +100,7 @@ exports.createPages = ({ actions, graphql }) => {
         return Promise.reject(res.errors);
       }
       const hash = {};
-      res.data.allContentfulArchitect.edges.forEach(({ node }) => {
+      const createPageFromEdges = ({ node }) => {
         if (!hash[node.path]) {
           hash[node.path] = true;
           createPage({
@@ -53,6 +111,9 @@ exports.createPages = ({ actions, graphql }) => {
             },
           });
         }
-      });
+      };
+      res.data.allContentfulArchitect.edges.forEach(createPageFromEdges);
+      res.data.allContentfulArchitectEn.edges.forEach(createPageFromEdges);
+      res.data.allContentfulArchitectBy.edges.forEach(createPageFromEdges);
     });
 };
