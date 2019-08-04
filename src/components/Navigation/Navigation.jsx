@@ -70,15 +70,15 @@ const useStyles = makeStyles(theme => ({
 const menuItems = [{
   text: 'home',
   icon: <Home />,
-  link: '/',
+  link: 'home_link',
 }, {
   text: 'search',
   icon: <Search />,
-  link: '/search',
+  link: 'search_link',
 }, {
   text: 'team',
   icon: <People />,
-  link: '/team',
+  link: 'team_link',
 },
 ];
 
@@ -132,7 +132,7 @@ const Nav = () => {
 
       <nav className={style.nav}>
         {menuItems.map(item => (
-          <Link to={item.link} activeClassName="active" key={item.text}>{t(item.text)}</Link>
+          <Link to={t(item.link)} activeClassName="active" key={item.text}>{t(item.text)}</Link>
         ))
         }
       </nav>
