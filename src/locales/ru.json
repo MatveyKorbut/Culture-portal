@@ -2,6 +2,7 @@
   "home": "Главная страница",
   "search": "К списку архитекторов",
   "team": "Наша команда",
+  "learn_more": "Читать статью",
   "home_link": "/",
   "search_link": "/search",
   "team_link": "/team"
