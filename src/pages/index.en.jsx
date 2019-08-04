@@ -11,7 +11,7 @@ const IndexPage = (props) => {
 
   return (
     <Layout>
-      <h1>HOME PAGE</h1>
+      <h2>ARCHITECTURE OF BELARUS</h2>
       <p>
         A long period of lack of their own statehood and the preservation of conservative
         feudal in the form of political attitudes significantly slowed down the development of
