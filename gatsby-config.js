@@ -42,7 +42,7 @@ module.exports = {
       resolve: 'gatsby-plugin-i18n',
       options: {
         langKeyDefault: 'ru',
-        useLangKeyLayout: false,
+        useLangKeyLayout: true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
