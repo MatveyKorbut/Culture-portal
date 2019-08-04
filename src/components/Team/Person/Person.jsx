@@ -9,6 +9,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 
+import idGenerator from 'react-id-generator';
 import mail from '../../../images/email.png';
 import github from '../../../images/github.png';
 
@@ -72,15 +73,16 @@ const person = ({
           Contribuition:
         </Typography>
         <ol style={{
-          // listStyle: 'none',
           margin: 0,
         }}
         >
           {data.map(item => (
-            <li style={{
-              fontSize: '14px',
-              margin: 0,
-            }}
+            <li
+              key={idGenerator()}
+              style={{
+                fontSize: '14px',
+                margin: 0,
+              }}
             >
               {item}
             </li>
