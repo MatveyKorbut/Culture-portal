@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import ArchitectOfTheDay from '../components/Home/ArchitectOfTheDay/ArchitectOfTheDay';
 import Layout from '../components/Layout/Layout';
+import '../locales/i18n';
 
 const IndexPage = (props) => {
   const { data: { allContentfulArchitect: { edges } } } = props;
