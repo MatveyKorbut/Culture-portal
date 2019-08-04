@@ -42,13 +42,6 @@ const ArchitectOfTheDay = ({ architect }) => {
 
   return (
     <>
-      <h2 style={{
-        textAlign: 'center',
-        margin: 5,
-      }}
-      >
-        Архитектор дня
-      </h2>
       <Card className={classes.card}>
         <CardActionArea onClick={() => navigate(architect.path)} className={classes.main}>
           <CardMedia
